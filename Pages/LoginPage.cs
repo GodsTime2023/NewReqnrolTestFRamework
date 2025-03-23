@@ -1,4 +1,6 @@
-﻿using NewReqnrolTestFRamework.JsonDatas;
+﻿using Dynamitey;
+using NewReqnrolTestFRamework.Extensions;
+using NewReqnrolTestFRamework.JsonDatas;
 using NewReqnrolTestFRamework.Support;
 using OpenQA.Selenium;
 
@@ -12,7 +14,7 @@ namespace NewReqnrolTestFRamework.Pages
             driver = _driver;
         }
 
-        IWebElement userName => driver.FindElement(By.Id("user-name"));
+        IWebElement userName => driver.FindById("user-name");
  
         IWebElement passWord => driver.FindElement(By.Id("password"));
         
@@ -23,13 +25,20 @@ namespace NewReqnrolTestFRamework.Pages
         {
             var readFromJson = new readFromJson();
             var url = readFromJson.geturlValue("url:suacedemoUrl");
+
+            var urlFromTextFile =
+                readFromTextFile.FromTextFile().Split("\r\n").First();
+
+            var urlFromTextFile2 = 
+                readFromTextFile.ReadFileData(@"C:\Users\joeea\OneDrive\Desktop\NewReqnrolTestFRamework\Support\Testdata\TestEnviromentData.txt");
             driver.Navigate().GoToUrl(url);
         }
 
         public void EnterCredentials(string username, string password)
         {
-            userName.SendKeys(username);
-            passWord.SendKeys(password);
+            Thread.Sleep(3000);
+            userName.SetText(username);
+            passWord.SetText(password);
             loginBtn.Click();
         }
     }

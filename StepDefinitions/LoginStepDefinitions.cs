@@ -13,7 +13,7 @@ namespace NewReqnrolTestFRamework.StepDefinitions
         IWebDriver driver;
         public LoginStepDefinitions(ScenarioContext scenarioContext)
         {
-            driver = scenarioContext.Get<IWebDriver>("browser"); //step4
+            driver = scenarioContext.Get<IWebDriver>("browser");
             lpage = new LoginPage(driver);
             ppage = new ProductPage(driver);
         }
@@ -57,7 +57,8 @@ namespace NewReqnrolTestFRamework.StepDefinitions
                 dataTable.Rows[0]["password"]);
         }
 
-        //Reading from json, resourcefile, note pad, xml, database
+        //ToDo
+        //Reading from note pad, spread sheet, database
         //ScenarioContext
         //Extension
 

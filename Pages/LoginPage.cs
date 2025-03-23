@@ -1,5 +1,4 @@
-﻿using Dynamitey;
-using NewReqnrolTestFRamework.Extensions;
+﻿using NewReqnrolTestFRamework.Extensions;
 using NewReqnrolTestFRamework.JsonDatas;
 using NewReqnrolTestFRamework.Support;
 using OpenQA.Selenium;

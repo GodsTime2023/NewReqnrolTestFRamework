@@ -3,15 +3,10 @@ using OpenQA.Selenium.Chrome;
 
 namespace NewReqnrolTestFRamework.Drivers
 {
-    public class StaticDriver
-    {
-        public static IWebDriver driver;
-    }
-
     public class InitializeDriver
     {
-        public IWebDriver driver;
-        ChromeOptions options;
+        public required IWebDriver driver;
+        public required ChromeOptions options;
 
         public IWebDriver Start()
         {

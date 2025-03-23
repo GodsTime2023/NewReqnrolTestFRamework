@@ -8,9 +8,9 @@ namespace NewReqnrolTestFRamework.StepDefinitions
     [Binding]
     public class LoginStepDefinitions 
     {
-        LoginPage lpage;
-        ProductPage ppage;
-        IWebDriver driver;
+        private readonly LoginPage lpage;
+        private readonly ProductPage ppage;
+        private readonly IWebDriver driver;
         public LoginStepDefinitions(ScenarioContext scenarioContext)
         {
             driver = scenarioContext.Get<IWebDriver>("browser");
@@ -56,12 +56,6 @@ namespace NewReqnrolTestFRamework.StepDefinitions
                 dataTable.Rows[0]["username"],
                 dataTable.Rows[0]["password"]);
         }
-
-        //ToDo
-        //Reading from note pad, spread sheet, database
-        //ScenarioContext
-        //Extension
-
 
         [Then("user is logged in")]
         public void ThenUserIsLoggedIn()

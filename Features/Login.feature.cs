@@ -28,7 +28,8 @@ namespace NewReqnrolTestFRamework.Features
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "As a user i want to be able to login", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Login", "As a user i want to be able to login\r\nAdd products to cart and verify total count" +
+                "s of product added to cart\r\nThen logout", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags);
         
 #line 1 "Login.feature"
 #line hidden
@@ -82,15 +83,15 @@ namespace NewReqnrolTestFRamework.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Valid Login Test")]
+        [NUnit.Framework.DescriptionAttribute("Add product to basket (Example 1)")]
         [NUnit.Framework.CategoryAttribute("one")]
-        public async System.Threading.Tasks.Task ValidLoginTest()
+        public async System.Threading.Tasks.Task AddProductToBasketExample1()
         {
             string[] tagsOfScenario = new string[] {
                     "one"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Valid Login Test", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 7
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Add product to basket (Example 1)", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -100,7 +101,7 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 8
+#line 13
  await testRunner.GivenAsync("user is on saucedemo login page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
                 global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
@@ -109,29 +110,53 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
-#line 9
+#line 14
  await testRunner.WhenAsync("user enters login credentials", ((string)(null)), table1, "When ");
 #line hidden
-#line 12
+#line 17
  await testRunner.ThenAsync("user is logged in", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 13
+#line 18
  await testRunner.AndAsync("the current url contain \'inventory\'", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                            "productName"});
+                table2.AddRow(new string[] {
+                            "Sauce Labs Backpack"});
+                table2.AddRow(new string[] {
+                            "Sauce Labs Bike Light"});
+#line 19
+ await testRunner.WhenAsync("I add the following products", ((string)(null)), table2, "When ");
+#line hidden
+#line 23
+ await testRunner.AndAsync("I view the basket", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 24
+ await testRunner.ThenAsync("I verify product count is 2", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                            "productName"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Backpack"});
+                table3.AddRow(new string[] {
+                            "Sauce Labs Bike Light"});
+#line 25
+ await testRunner.AndAsync("I verify product names as", ((string)(null)), table3, "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Valid Login Test2")]
+        [NUnit.Framework.DescriptionAttribute("Add product to basket (Example 2)")]
         [NUnit.Framework.CategoryAttribute("two")]
-        public async System.Threading.Tasks.Task ValidLoginTest2()
+        public async System.Threading.Tasks.Task AddProductToBasketExample2()
         {
             string[] tagsOfScenario = new string[] {
                     "two"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Valid Login Test2", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Add product to basket (Example 2)", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 38
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -141,23 +166,38 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 17
+#line 39
  await testRunner.GivenAsync("user is on saucedemo login page", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
-                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
                             "username",
                             "password"});
-                table2.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             "standard_user",
                             "secret_sauce"});
-#line 18
- await testRunner.WhenAsync("user enters login credentials", ((string)(null)), table2, "When ");
+#line 40
+ await testRunner.WhenAsync("user enters login credentials", ((string)(null)), table4, "When ");
 #line hidden
-#line 21
+#line 43
  await testRunner.ThenAsync("user is logged in", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
-#line 22
+#line 44
  await testRunner.AndAsync("the current url contain \'inventory\'", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 45
+ await testRunner.WhenAsync("I save product names as \"products\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 46
+ await testRunner.AndAsync("I add 6 products to cart", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 47
+ await testRunner.AndAsync("I view the basket", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 48
+ await testRunner.ThenAsync("I verify product count is 6", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 49
+ await testRunner.AndAsync("I verify 6 product names from \"products\"", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

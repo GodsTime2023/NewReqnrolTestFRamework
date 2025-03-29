@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-
-namespace NewReqnrolTestFRamework.Drivers
+﻿namespace NewReqnrolTestFRamework.Drivers
 {
     public class InitializeDriver
     {

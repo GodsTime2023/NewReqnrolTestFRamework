@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-
-namespace NewReqnrolTestFRamework.JsonDatas
+﻿namespace NewReqnrolTestFRamework.JsonDatas
 {
     public class readFromJson
     {
@@ -17,9 +15,7 @@ namespace NewReqnrolTestFRamework.JsonDatas
         }
 
         public string geturlValue(string key) => _config[key]!;
-        public string? GetUrl()
-        {
-            return _config.GetSection("url")?.GetValue<string>("suacedemoUrl");
-        }
+        public string? GetUrl() =>
+            _config.GetSection("url")?.GetValue<string>("suacedemoUrl");
     }
 }

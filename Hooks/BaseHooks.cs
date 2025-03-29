@@ -1,6 +1,4 @@
-using NewReqnrolTestFRamework.Drivers;
-
-//[assembly : Parallelizable(ParallelScope.Children)]
+[assembly : Parallelizable(ParallelScope.Children)]
 namespace NewReqnrolTestFRamework.Hooks
 {
     [Binding]
@@ -26,6 +24,7 @@ namespace NewReqnrolTestFRamework.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
+            Thread.Sleep(5000);
             InitializeDriver.ShutDownBrowser();
         }
     }

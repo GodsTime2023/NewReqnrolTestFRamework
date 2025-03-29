@@ -1,7 +1,4 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-
-namespace NewReqnrolTestFRamework.Extensions
+﻿namespace NewReqnrolTestFRamework.Extensions
 {
     public static class DriverExtension
     {
